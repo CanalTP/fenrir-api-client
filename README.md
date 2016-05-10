@@ -77,6 +77,12 @@ See the [complete Fenrir Api client class](src/FenrirApi.php).
 
 ## Testing
 
+Running tests:
+
+``` bash
+vendor\bin\phpunit -c .
+```
+
 
 ## License
 
