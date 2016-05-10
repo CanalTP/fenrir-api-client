@@ -31,7 +31,7 @@ use CanalTP\FenrirApiClient\AbstractGuzzle\Version;
 $baseUrl = 'http://fenrir-api.local/';
 
 $fenrirApi = new FenrirApi(new Version\Guzzle5($baseUrl)); // For Guzzle 5
-$fenrirApi = new FenrirApi(new Version\Guzzle5($baseUrl)); // For Guzzle 3
+$fenrirApi = new FenrirApi(new Version\Guzzle3($baseUrl)); // For Guzzle 3
 ```
 
 Or to abstract Guzzle client version, use the Guzzle client factory:
