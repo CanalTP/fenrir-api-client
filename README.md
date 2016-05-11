@@ -34,7 +34,7 @@ $fenrirApi = new FenrirApi(new Version\Guzzle5($baseUrl)); // For Guzzle 5
 $fenrirApi = new FenrirApi(new Version\Guzzle3($baseUrl)); // For Guzzle 3
 ```
 
-Or to abstract Guzzle client version, use the Guzzle client factory:
+Or to abstract Guzzle client version, use the factory:
 
 ``` php
 use CanalTP\FenrirApiClient\FenrirApi;
@@ -42,7 +42,7 @@ use CanalTP\FenrirApiClient\AbstractGuzzle\GuzzleVersions;
 
 $baseUrl = 'http://fenrir-api.local/';
 
-$fenrirApi = new FenrirApi(GuzzleVersions::createGuzzle($baseUrl));
+$fenrirApi = FenrirApi::createWithBaseUrl($baseUrl);
 ```
 
 
