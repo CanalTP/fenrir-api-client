@@ -86,6 +86,14 @@ class FenrirApi
     }
 
     /**
+     * @return Guzzle
+     */
+    public function getGuzzle()
+    {
+        return $this->guzzle;
+    }
+
+    /**
      * @return Response
      */
     public function getLastResponse()
