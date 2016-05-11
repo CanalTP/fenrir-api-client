@@ -5,6 +5,7 @@ namespace CanalTP\FenrirApiClient;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use CanalTP\FenrirApiClient\AbstractGuzzle\Guzzle;
+use CanalTP\FenrirApiClient\AbstractGuzzle\GuzzleVersions;
 use CanalTP\FenrirApiClient\Exception\FenrirApiException;
 
 class FenrirApi
@@ -22,9 +23,19 @@ class FenrirApi
     /**
      * @param Guzzle $guzzle
      */
-    public function __construct($guzzle)
+    public function __construct(Guzzle $guzzle)
     {
         $this->guzzle = $guzzle;
+    }
+
+    /**
+     * @param string $baseUrl
+     *
+     * @return self
+     */
+    public static function createWithBaseUrl($baseUrl)
+    {
+        return new static(GuzzleVersions::createGuzzle($baseUrl));
     }
 
     /**
