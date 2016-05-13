@@ -3,7 +3,6 @@
 namespace Tests\CanalTP\FenrirApiClient;
 
 use GuzzleHttp\Psr7\Request;
-use CanalTP\FenrirApiClient\AbstractGuzzle\Guzzle;
 use CanalTP\FenrirApiClient\FenrirApi;
 
 abstract class AbstractFenrirApiTest extends \PHPUnit_Framework_TestCase
@@ -27,7 +26,7 @@ abstract class AbstractFenrirApiTest extends \PHPUnit_Framework_TestCase
 
         $baseUrlMock = 'http://mock.ette/api/';
 
-        $this->guzzle = $this->getMockForAbstractClass(Guzzle::class, [$baseUrlMock]);
+        $this->guzzle = $this->getMockForAbstractClass('CanalTP\\FenrirApiClient\\AbstractGuzzle\\Guzzle', [$baseUrlMock]);
         $this->fenrirApi = new FenrirApi($this->guzzle);
     }
 
