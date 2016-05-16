@@ -5,11 +5,6 @@ namespace CanalTP\FenrirApiClient\Exception;
 class FenrirApiException extends \RuntimeException
 {
     /**
-     * @var int
-     */
-    private $statusCode;
-
-    /**
      * @var string
      */
     private $reason;
@@ -26,6 +21,8 @@ class FenrirApiException extends \RuntimeException
             $statusCode,
             $previous
         );
+
+        $this->reason = $reason;
     }
 
     /**
@@ -33,7 +30,7 @@ class FenrirApiException extends \RuntimeException
      */
     public function getStatusCode()
     {
-        return $this->statusCode;
+        return $this->getCode();
     }
 
     /**
