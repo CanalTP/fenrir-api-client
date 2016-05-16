@@ -178,15 +178,15 @@ class FenrirApi
     }
 
     /**
-     * Retrieve an origin by id.
+     * Retrieve an origin by id or name.
      *
-     * @param int $id
+     * @param int|string $idOrName
      *
      * @return \stdClass
      */
-    public function getOrigin($id)
+    public function getOrigin($idOrName)
     {
-        return $this->jsonCall('GET', 'origins/'.$id);
+        return $this->jsonCall('GET', 'origins/'.$idOrName);
     }
 
     /**
