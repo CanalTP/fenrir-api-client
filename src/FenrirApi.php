@@ -4,8 +4,8 @@ namespace CanalTP\FenrirApiClient;
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use CanalTP\FenrirApiClient\AbstractGuzzle\Guzzle;
-use CanalTP\FenrirApiClient\AbstractGuzzle\GuzzleVersions;
+use CanalTP\AbstractGuzzle\Guzzle;
+use CanalTP\AbstractGuzzle\GuzzleFactory;
 use CanalTP\FenrirApiClient\Exception\FenrirApiException;
 
 class FenrirApi
@@ -35,7 +35,7 @@ class FenrirApi
      */
     public static function createWithBaseUrl($baseUrl)
     {
-        return new static(GuzzleVersions::createGuzzle($baseUrl));
+        return new static(GuzzleFactory::createGuzzle($baseUrl));
     }
 
     /**
@@ -178,15 +178,15 @@ class FenrirApi
     }
 
     /**
-     * Retrieve an origin by id.
+     * Retrieve an origin by id or name.
      *
-     * @param int $id
+     * @param int|string $idOrName
      *
      * @return \stdClass
      */
-    public function getOrigin($id)
+    public function getOrigin($idOrName)
     {
-        return $this->jsonCall('GET', 'origins/'.$id);
+        return $this->jsonCall('GET', 'origins/'.$idOrName);
     }
 
     /**
