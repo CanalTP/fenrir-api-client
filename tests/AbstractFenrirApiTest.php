@@ -26,7 +26,7 @@ abstract class AbstractFenrirApiTest extends \PHPUnit_Framework_TestCase
 
         $baseUrlMock = 'http://mock.ette/api/';
 
-        $this->guzzle = $this->getMockForAbstractClass('CanalTP\\FenrirApiClient\\AbstractGuzzle\\Guzzle', [$baseUrlMock]);
+        $this->guzzle = $this->getMockForAbstractClass('CanalTP\\AbstractGuzzle\\Guzzle', [$baseUrlMock]);
         $this->fenrirApi = new FenrirApi($this->guzzle);
     }
 

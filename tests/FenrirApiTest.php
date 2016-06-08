@@ -14,7 +14,7 @@ class FenrirApiTest extends AbstractFenrirApiTest
         $abstractGuzzle = $fenrirApi->getGuzzle();
 
         $this->assertInstanceOf('CanalTP\\FenrirApiClient\\FenrirApi', $fenrirApi);
-        $this->assertInstanceOf('CanalTP\\FenrirApiClient\\AbstractGuzzle\\Guzzle', $abstractGuzzle);
+        $this->assertInstanceOf('CanalTP\\AbstractGuzzle\\Guzzle', $abstractGuzzle);
 
         $this->assertEquals($baseUrl, $abstractGuzzle->getBaseUrl());
     }
